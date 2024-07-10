@@ -1,31 +1,106 @@
-import { useState } from 'react'
+import {restaurants} from "../materials/mock.js";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+    console.log(restaurants)
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <>
+          <div>
+              {restaurants[0].name}
+              <h3>Menu:</h3>
+              <ul>
+                  <li>
+                      {restaurants[0].menu[0].name}
+                  </li>
+                  <li>
+                      {restaurants[0].menu[1].name}
+                  </li>
+                  <li>
+                      {restaurants[0].menu[2].name}
+                  </li>
+              </ul>
+              <h3>Reviews:</h3>
+              <ul>
+                  <li>
+                      {restaurants[0].reviews[0].text}
+                  </li>
+                  <li>
+                      {restaurants[0].reviews[1].text}
+                  </li>
+              </ul>
+          </div>
+          <div>
+              {restaurants[1].name}
+              <h3>Menu:</h3>
+              <ul>
+                  <li>
+                      {restaurants[0].menu[0].name}
+                  </li>
+                  <li>
+                      {restaurants[0].menu[1].name}
+                  </li>
+                  <li>
+                      {restaurants[0].menu[2].name}
+                  </li>
+              </ul>
+              <h3>Reviews:</h3>
+              <ul>
+                  <li>
+                      {restaurants[0].reviews[0].text}
+                  </li>
+                  <li>
+                      {restaurants[0].reviews[1].text}
+                  </li>
+              </ul>
+          </div>
+          <div>
+              {restaurants[2].name}
+              <h3>Menu:</h3>
+              <ul>
+                  <li>
+                      {restaurants[0].menu[0].name}
+                  </li>
+                  <li>
+                      {restaurants[0].menu[1].name}
+                  </li>
+                  <li>
+                      {restaurants[0].menu[2].name}
+                  </li>
+              </ul>
+              <h3>Reviews:</h3>
+              <ul>
+                  <li>
+                      {restaurants[0].reviews[0].text}
+                  </li>
+                  <li>
+                      {restaurants[0].reviews[1].text}
+                  </li>
+              </ul>
+          </div>
+          <div>
+              {restaurants[3].name}
+              <h3>Menu:</h3>
+              <ul>
+                  <li>
+                      {restaurants[0].menu[0].name}
+                  </li>
+                  <li>
+                      {restaurants[0].menu[1].name}
+                  </li>
+                  <li>
+                      {restaurants[0].menu[2].name}
+                  </li>
+              </ul>
+              <h3>Reviews:</h3>
+              <ul>
+                  <li>
+                      {restaurants[0].reviews[0].text}
+                  </li>
+                  <li>
+                      {restaurants[0].reviews[1].text}
+                  </li>
+              </ul>
+          </div>
+      </>
   )
 }
 
