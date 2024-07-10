@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {restaurants} from "../materials/mock.js";
 
 function App() {
