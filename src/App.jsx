@@ -1,98 +1,29 @@
 import {restaurants} from "../materials/mock.js";
+import {Restaurants} from "./components/Restaurants/Restaurants.jsx";
+import {Layout} from "./Layout/Layout.jsx";
+import {TabsSection} from "./components/TabsSection/TabsSection.jsx";
+import {useState} from "react";
+
 
 function App() {
-    console.log(restaurants)
+    const [tab, setTab] = useState('rest1')
+
+    const tabIndex = {
+        'rest1': 0,
+        'rest2': 1,
+        'rest3': 2,
+        'rest4': 3
+    };
+
+    const filteredRestaurant = restaurants[tabIndex[tab]] ? [restaurants[tabIndex[tab]]] : [];
+    console.log(filteredRestaurant)
   return (
       <>
           <div>
-              {restaurants[0].name}
-              <h3>Menu:</h3>
-              <ul>
-                  <li>
-                      {restaurants[0].menu[0].name}
-                  </li>
-                  <li>
-                      {restaurants[0].menu[1].name}
-                  </li>
-                  <li>
-                      {restaurants[0].menu[2].name}
-                  </li>
-              </ul>
-              <h3>Reviews:</h3>
-              <ul>
-                  <li>
-                      {restaurants[0].reviews[0].text}
-                  </li>
-                  <li>
-                      {restaurants[0].reviews[1].text}
-                  </li>
-              </ul>
-          </div>
-          <div>
-              {restaurants[1].name}
-              <h3>Menu:</h3>
-              <ul>
-                  <li>
-                      {restaurants[1].menu[0].name}
-                  </li>
-                  <li>
-                      {restaurants[1].menu[1].name}
-                  </li>
-              </ul>
-              <h3>Reviews:</h3>
-              <ul>
-                  <li>
-                      {restaurants[1].reviews[0].text}
-                  </li>
-                  <li>
-                      {restaurants[1].reviews[1].text}
-                  </li>
-                  <li>
-                      {restaurants[1].reviews[2].text}
-                  </li>
-              </ul>
-          </div>
-          <div>
-              {restaurants[2].name}
-              <h3>Menu:</h3>
-              <ul>
-                  <li>
-                      {restaurants[2].menu[0].name}
-                  </li>
-                  <li>
-                      {restaurants[2].menu[1].name}
-                  </li>
-                  <li>
-                      {restaurants[2].menu[2].name}
-                  </li>
-              </ul>
-              <h3>Reviews:</h3>
-              <ul>
-                  <li>
-                      {restaurants[2].reviews[0].text}
-                  </li>
-              </ul>
-          </div>
-          <div>
-              {restaurants[3].name}
-              <h3>Menu:</h3>
-              <ul>
-                  <li>
-                      {restaurants[3].menu[0].name}
-                  </li>
-                  <li>
-                      {restaurants[3].menu[1].name}
-                  </li>
-              </ul>
-              <h3>Reviews:</h3>
-              <ul>
-                  <li>
-                      {restaurants[3].reviews[0].text}
-                  </li>
-                  <li>
-                      {restaurants[3].reviews[1].text}
-                  </li>
-              </ul>
+              <Layout>
+              <TabsSection active={tab} onChange={(current) => setTab(current)} />
+                  <Restaurants restaurants={filteredRestaurant} />
+              </Layout>
           </div>
       </>
   )
