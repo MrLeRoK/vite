@@ -1,5 +1,4 @@
 import {Button} from "../Button/Button.jsx";
-import {restaurants} from "../../../materials/mock.js";
 
 export const TabsSection = ({active, onChange}) => {
     return (

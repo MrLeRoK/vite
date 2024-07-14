@@ -10,7 +10,8 @@ export const RestaurantsList = ({restaurants}) => {
   return (
       <div>
           {restaurants.map((restaurant) => (
-              <div key={restaurant.id}>
+              <div
+                  key={restaurant.id}>
                   <h1>{restaurant.name}</h1>
                   <h3>Menu:</h3>
                   <ul className='no_points'>
@@ -25,7 +26,10 @@ export const RestaurantsList = ({restaurants}) => {
                   <h3>Reviews:</h3>
                   <ul style={{listStyleType:'none'}}>
                       {restaurant.reviews.map((review) => (
-                          <li key={review.id}>{review.text}</li>
+                          <li
+                              key={review.id}>
+                              {review.text}
+                          </li>
                       ))}
                   </ul>
               </div>
