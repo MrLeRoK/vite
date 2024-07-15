@@ -1,4 +1,3 @@
-import {CounterMenu} from "../CounterMenu/CounterMenu.jsx";
 import './Restaurants.css'
 import {Menu} from "../Menu/Menu.jsx";
 import {Reviews} from "../Reviews/Reviews.jsx";
