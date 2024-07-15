@@ -1,5 +1,7 @@
 import {CounterMenu} from "../CounterMenu/CounterMenu.jsx";
 import './Restaurants.css'
+import {Menu} from "../Menu/Menu.jsx";
+import {Reviews} from "../Reviews/Reviews.jsx";
 
 
 export const RestaurantsList = ({restaurants}) => {
@@ -18,8 +20,7 @@ export const RestaurantsList = ({restaurants}) => {
                       {restaurant.menu.map((item) => (
                           <li className='menu'
                               key={item.id}>
-                              {item.name}
-                              <CounterMenu/>
+                              <Menu text={item.name} />
                           </li>
                       ))}
                   </ul>
@@ -28,7 +29,7 @@ export const RestaurantsList = ({restaurants}) => {
                       {restaurant.reviews.map((review) => (
                           <li
                               key={review.id}>
-                              {review.text}
+                              <Reviews text={review.text}/>
                           </li>
                       ))}
                   </ul>

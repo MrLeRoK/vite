@@ -1,8 +1,8 @@
 import {restaurants} from "../materials/mock.js";
-import {Restaurants} from "./components/Restaurants/Restaurants.jsx";
 import {Layout} from "./Layout/Layout.jsx";
 import {TabsSection} from "./components/TabsSection/TabsSection.jsx";
 import {useState} from "react";
+import {RestaurantsList} from "./components/RestaurantsList/RestaurantsList.jsx";
 
 
 function App() {
@@ -15,14 +15,17 @@ function App() {
         'rest4': 3
     };
 
-    const filteredRestaurant = restaurants[tabIndex[tab]] ? [restaurants[tabIndex[tab]]] : [];
-    console.log(filteredRestaurant)
+    const foundRestaurant = restaurants.find((restaurant, index) => index === tabIndex[tab]);
+    const filteredRestaurant = foundRestaurant ? [foundRestaurant] : [];
+
+    // const filteredRestaurant = restaurants[tabIndex[tab]] ? [restaurants[tabIndex[tab]]] : [];
+
   return (
       <>
           <div>
               <Layout>
               <TabsSection active={tab} onChange={(current) => setTab(current)} />
-                  <Restaurants restaurants={filteredRestaurant} />
+                  <RestaurantsList  restaurants={filteredRestaurant} />
               </Layout>
           </div>
       </>
