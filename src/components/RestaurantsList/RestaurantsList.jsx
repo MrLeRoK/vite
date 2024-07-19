@@ -1,16 +1,16 @@
 import './Restaurants.css'
 import {Menu} from "../Menu/Menu.jsx";
 import {Reviews} from "../Reviews/Reviews.jsx";
+import {ReviewForm} from "../ReviewForm/ReviewForm.jsx";
 
+export const RestaurantsList = ({restaurant}) => {
 
-export const RestaurantsList = ({restaurants}) => {
-    if (!restaurants || restaurants.length === 0) {
+    if (!restaurant || restaurant.length === 0) {
         return <p>Данные не найдены</p>;
     }
 
   return (
       <div>
-          {restaurants.map((restaurant) => (
               <div
                   key={restaurant.id}>
                   <h1>{restaurant.name}</h1>
@@ -32,8 +32,8 @@ export const RestaurantsList = ({restaurants}) => {
                           </li>
                       ))}
                   </ul>
+                  <ReviewForm />
               </div>
-          ))}
       </div>
   )
 }
