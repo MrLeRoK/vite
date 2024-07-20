@@ -1,0 +1,25 @@
+.container {
+}
+
+.noPoints {
+    list-style-type: none;
+}
+
+.menuItem {
+    padding-bottom: 15px;
+}
+
+.heading {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.reviewList {
+    list-style-type: none;
+}

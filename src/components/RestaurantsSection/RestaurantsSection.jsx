@@ -1,19 +1,20 @@
-import {restaurants} from "../../../materials/mock.js";
-import {useState} from "react";
-import {RestaurantsList} from "../RestaurantsList/RestaurantsList.jsx";
+import { useState } from "react";
+import { restaurants } from "../../../materials/mock.js";
+import { RestaurantsList } from "../RestaurantsList/RestaurantsList.jsx";
+import styles from './RestaurantsSection.module.css';
 
 export const RestaurantsSection = () => {
     const [activeRestaurantId, setActiveRestaurantId] = useState(restaurants[0].id);
 
     const activeRestaurant = restaurants.find((item) => item.id === activeRestaurantId);
-    // Можно везде использовать "name" вместа  "id"
 
     return (
-        <div>
-            <ul>
-                {restaurants.map(({id, name}) => (
-                    <li key={id}>
+        <div className={styles.container}>
+            <ul className={styles.restaurantList}>
+                {restaurants.map(({ id, name }) => (
+                    <li key={id} className={styles.restaurantItem}>
                         <button
+                            className={styles.button}
                             disabled={id === activeRestaurantId}
                             onClick={() => setActiveRestaurantId(id)}
                         >
@@ -22,7 +23,7 @@ export const RestaurantsSection = () => {
                     </li>
                 ))}
             </ul>
-            {activeRestaurant && <RestaurantsList restaurant={activeRestaurant}/>}
+            {activeRestaurant && <RestaurantsList restaurant={activeRestaurant} />}
         </div>
     );
 };

@@ -1,3 +1,3 @@
 export const Footer = () => {
-    return <footer>contact</footer>
+    return <footer style={{marginLeft: '20px'}}>contact</footer>
 }

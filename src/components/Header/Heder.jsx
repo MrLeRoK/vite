@@ -1,4 +1,4 @@
 
 export const Header = () => {
-    return <h1><header>List of restaurants</header></h1>
+    return <h1 style={{marginLeft: '20px'}}><header>List of restaurants</header></h1>
 }

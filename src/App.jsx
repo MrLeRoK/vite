@@ -1,10 +1,11 @@
 import {Layout} from "./Layout/Layout.jsx";
 import {RestaurantsSection} from "./components/RestaurantsSection/RestaurantsSection.jsx";
+import './App.css'
 
 function App() {
   return (
       <>
-          <div>
+          <div className="container">
               <Layout>
                   <RestaurantsSection/>
               </Layout>
