@@ -1,5 +1,6 @@
 import { useEffect, useReducer, useRef } from 'react';
 import styles from './ReviewForm.module.css';
+import {Button} from "../Button/Button.jsx";
 
 const INITIAL_FORM = {
     name: '',
@@ -35,12 +36,8 @@ export const ReviewForm = () => {
     const [form, dispatch] = useReducer(reducer, INITIAL_FORM);
     const inputRef = useRef();
 
-    const handlerFocus = () => {
-        inputRef.current.focus();
-    };
-
     useEffect(() => {
-        handlerFocus(); // Фокус на первый input при монтировании компонента
+        inputRef.current.focus(); // Фокус на первый input при монтировании компонента
     }, []);
 
     const handleSubmit = (e) => {
@@ -94,7 +91,7 @@ export const ReviewForm = () => {
                     ))}
                 </select>
             </div>
-            <button type="submit" className={styles.button}>Сохранить</button>
+            <Button viewVariant='primary' text='Сохранить'/>
         </form>
     );
 };
