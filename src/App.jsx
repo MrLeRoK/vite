@@ -2,6 +2,7 @@ import {Layout} from "./Layout/Layout.jsx";
 import {RestaurantsSection} from "./components/RestaurantsSection/RestaurantsSection.jsx";
 import './App.css'
 import {createContext, useCallback, useState} from "react";
+import {ThemeContextProvider} from "./components/theme-context/index.js";
 
 export const ThemeContext = createContext();
 
@@ -13,13 +14,13 @@ function App() {
     }, [])
 
   return (
-      <ThemeContext.Provider value={{value: theme, toggleTheme}}>
+      <ThemeContextProvider value={{value: theme, toggleTheme}}>
           <div className="container">
               <Layout>
                   <RestaurantsSection/>
               </Layout>
           </div>
-      </ThemeContext.Provider>
+      </ThemeContextProvider>
   )
 }
 

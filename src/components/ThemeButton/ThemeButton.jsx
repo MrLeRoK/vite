@@ -1,11 +1,10 @@
 import {Button} from "../Button/Button.jsx";
-import {useContext} from "react";
-import {ThemeContext} from "../../App.jsx";
+import {useTheme} from "../theme-context/index.js";
 import style from './ThemeButton.module.css'
 
 
 export const ThemeButton = () => {
-    const { value: themeValue, toggleTheme} = useContext(ThemeContext);
+    const { value: themeValue, toggleTheme} = useTheme();
     return (
         <div className={style.button}>
             <Button
