@@ -1,5 +1,5 @@
 import {Button} from "../Button/Button.jsx";
-import {useTheme} from "../theme-context/index.js";
+import {useTheme} from "../theme-context/index.jsx";
 import style from './ThemeButton.module.css'
 
 

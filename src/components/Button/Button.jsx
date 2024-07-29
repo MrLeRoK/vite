@@ -1,10 +1,8 @@
 import styles from './Button.module.css'
 import classnames from "classnames";
-// import {useContext} from "react";
-// import {ThemeContext} from "../../App.jsx";
-import {useTheme} from "../theme-context/index.js";
-export const Button = ({text, onClick, children, viewVariant = 'default', ...props}) => {
+import {useTheme} from "../theme-context/index.jsx";
 
+export const Button = ({text, onClick, children, viewVariant = 'default', ...props}) => {
     const { value: themeValue } = useTheme()
 
     return (
