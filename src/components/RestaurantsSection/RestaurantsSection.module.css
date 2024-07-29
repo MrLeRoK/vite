@@ -1,0 +1,32 @@
+.container {
+    padding: 20px;
+}
+
+.restaurantList {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.restaurantItem {
+    margin-bottom: 10px;
+}
+
+.button {
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background-color: #2c668d;
+    cursor: not-allowed;
+}
+
+.button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
